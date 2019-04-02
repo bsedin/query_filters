@@ -20,25 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 QueryFilters.parse('date_gteq=20-11-2018,date_lteq=20-12-2018')
 ```
 
 Produces:
 
-```
+```ruby
 { date_gteq: '20-11-2018', date_lteq: '20-12-2018' }
 ```
 
 ### Nested params
 
-```
+```ruby
 QueryFilters.parse('date_gteq=20-11-2018,date_lteq=20-12-2018,posts:title=what about dogs,posts:order=title_desc')
 ```
 
 Produces:
 
-```
+```ruby
 {
   date_gteq: '20-11-2018',
   date_lteq: '20-12-2018',
@@ -50,7 +50,7 @@ Produces:
 
 You can configure parser through options:
 
-```
+```ruby
 QueryFilters.parse('posts/title=what about dogs;posts/order=title_desc',
   nesting_separator: '/',
   assignment_separator: ':',
@@ -61,7 +61,7 @@ QueryFilters.parse('posts/title=what about dogs;posts/order=title_desc',
 
 Produces:
 
-```
+```ruby
 {"posts"=>{"title"=>"what about dogs", "order"=>"title_desc"}}
 ```
 
