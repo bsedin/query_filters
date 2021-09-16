@@ -13,6 +13,7 @@ module QueryFilters
       @query_string = query_string
     end
 
+    # @return [QueryFilters::Parser]
     def parser
       Parser.new(self, options)
     end

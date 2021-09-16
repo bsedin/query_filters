@@ -33,7 +33,7 @@ Produces:
 ### Nested params
 
 ```ruby
-QueryFilters.parse('date_gteq=20-11-2018,date_lteq=20-12-2018,posts:title=what about dogs,posts:order=title_desc')
+QueryFilters.parse('date_gteq=20-11-2018,date_lteq=20-12-2018,posts:title=what about dogs,posts:order=date_desc')
 ```
 
 Produces:
@@ -51,7 +51,7 @@ Produces:
 You can configure parser through options:
 
 ```ruby
-QueryFilters.parse('posts/title=what about dogs;posts/order=title_desc',
+QueryFilters.parse('posts/title:what about dogs;posts/order:title_desc',
   nesting_separator: '/',
   assignment_separator: ':',
   filters_separator: ';',
